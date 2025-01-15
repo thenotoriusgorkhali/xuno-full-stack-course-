@@ -1,0 +1,34 @@
+def number(n):
+    steps = 0 
+    while n != 1:
+        print (f"Current number:{n}")
+        if n == 4:
+            print("sequence detected 4>2>1")
+            break
+        if n % 2 == 0:
+            n = n//2
+        else:
+            n = n*3 + 1
+        steps +=1
+    
+    print(f"Total number of steps: {steps}")
+    
+number(22)
+
+Output :
+Current number:22
+Current number:11
+Current number:34
+Current number:17
+Current number:52
+Current number:26
+Current number:13
+Current number:40
+Current number:20
+Current number:10
+Current number:5
+Current number:16
+Current number:8
+Current number:4
+sequence detected 4>2>1
+Total number of steps: 13
