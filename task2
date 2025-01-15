@@ -28,6 +28,78 @@ Current number:20
 Current number:10
 Current number:5
 Current number:16
+
+
+
+
+
+Arrow Function & Traditional Function in JavaScript
+
+
+1.Syntax & Readability:
+Arrow Function chai generally   expressive hunxa ani manily cahi inline or call back function ma use hunxa.
+Traditional Function chai easily bujinxa complex scenario haru easily bujna sakxau.
+// Traditional Function:
+ function add(a, b) 
+{ return a + b; } 
+// Arrow Function:
+ const add = (a, b) => a + b;
+
+2. Binding of this:
+ So Js ma chai  this  is a special  keyword.
+ Arrow function ko a one of the special features chai it doesnot bind their own this ,but lexically inherit from surrounding context.That’s why arrow function is useful for callbacks whre this context is unintentionally overwritten.
+
+
+So traditional functionma chai this keword cahi aafaile bind garxa.Jabba chai function call hunxxa this cahi object hunxa.However when traditional function use call backs like set interval,set time out this keyword refers to global object/.
+
+
+3. argument objects:
+
+Arrow function ko argument object pani hudain aafno  they inherit from surrounding functions. To handle arguments in arrow functions, we  should use rest parameters (...args).
+const myFunc = (...args) => { 
+console.log(args); // [1, 2, 3] 
+};
+ myFunc(1, 2, 3);
+Traditionla ma chain aafno agrmunent object hunx akatai bata inherit garirakhnu pardaina.
+
+4.Constructor Behavior:
+ Arrow function cannot be used as a constructor.We cant use the new keyword with an aarrow function.If we try to do so TypeErrror aauxa.This is because arrow function doesnot have own this context. 
+const Person = (name) => { this.name = name; };
+ const p = new Person('John'); 
+// TypeError: Person is not a constructor.
+Traditional function can be used as  a constructor when invoked with new keyword.
+function Person(name) { this.name = name; } 
+const p = new Person('John');
+ // Works fine console.log(p.name); // John
+
+5. Hoisting:
+Arrow function are hoisted as varable that means they must be decalred before they are called..
+sayHello(); // Error: Cannot access 'sayHello' before initialization const sayHello = () => {
+ console.log("Hello!"); 
+};
+Traditional function are hoisted that means they can be called before declaration .
+Eg:
+sayHello(); // Works because it's fully hoisted
+
+function sayHello() {
+    console.log("Hello!");
+}
+
+
+6 . Use in Event Handlers and Callbacks:
+
+So generally arrow function is useful in cases where we want to preserve this value from the surroudnig context.
+
+Traditional function ko chai aanai binding hunxa this sanga jasle garda unexpected error especially in callbacks or event listener.
+
+
+7. Return Value:
+
+So Arrow function ma  edi aauta matra expression xa vane return garirakhnu pardaina .edi 2 ta expression xa vane explicit return use garnu parxa nai curly braces vitra e return gareko hunu parxa.
+
+Traditional function ma chai implicit return hudaina explicit matra hunxa…
+
+
 Current number:8
 Current number:4
 sequence detected 4>2>1
