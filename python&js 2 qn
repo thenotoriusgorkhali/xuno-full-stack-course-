@@ -1,0 +1,138 @@
+
+  # 1) Find prime number in least amount of loops => 43020, 43019
+# using python
+  
+import math
+
+def primenumber(n):
+    if n <= 1:
+        return False 
+    if n == 2 :
+        return True
+    if n % 2 == 0 :
+        return False 
+        
+    for items in range(3, int(math.sqrt(n))+1 , 2):
+         if n % items == 0 :
+             return False
+    
+    return True
+    
+numbers =[43020 ,43019]
+
+for num in numbers:
+    print(f"the no  {num} is { 'prime' if primenumber(num) else 'not prime' }. ")
+       
+  output:
+the no  43020 is not prime. 
+the no  43019 is prime.
+
+
+  // 1) Find prime number in least amount of loops => 43020, 43019
+//using js
+
+function primenumber(n){
+    
+    if (n<= 1){
+        return false ;
+    }
+    if (n === 2){
+        return true ;
+        
+    }
+    if (n%2 === 0){
+        return false ;
+        
+    }
+    for(let i =3; i <=Math.sqrt(n); i+=2){
+        if (n % i === 0);
+        return false ;
+    }
+    return true;
+    
+}
+let numbers =[43021,43019];
+numbers.forEach(numb =>{
+    console.log(`${numb} is  {$primenumber(numb)? 'prime' : 'notprime'}`);
+});
+
+
+output :
+43021 is  {$primenumber(numb)? 'prime' : 'notprime'}
+43019 is  {$primenumber(numb)? 'prime' : 'notprime'}
+
+
+
+
+
+# 2) (even / 2, odd * 3+1) => 1;
+# using python
+def number(n):
+      steps = 0
+      while n != 1:
+          print(n,end= '  ');
+          if n % 2 == 0:
+              n = n/2 
+          else:
+              n = n*3+1
+          steps += 1
+          print(n)
+          print(f"total no of steps {steps}")
+          
+number(20)
+
+output:
+20  10.0
+total no of steps 1
+10.0  5.0
+total no of steps 2
+5.0  16.0
+total no of steps 3
+16.0  8.0
+total no of steps 4
+8.0  4.0
+total no of steps 5
+4.0  2.0
+total no of steps 6
+2.0  1.0
+total no of steps 7
+
+
+// 2) (even / 2, odd * 3+1) => 1;
+//using javascript
+function number(n) {
+    let steps = 0;
+    while (n != 1) {
+        console.log(n);
+        if (n % 2 === 0) {
+            n = n / 2;
+        } else {
+            n = n * 3 + 1;
+        }
+        steps += 1;
+    }
+    console.log(n);
+    console.log(`Total number of steps: ${steps}`);
+}
+
+output 
+22
+11
+34
+17
+52
+26
+13
+40
+20
+10
+5
+16
+8
+4
+2
+1
+Total number of steps: 15
+
+number(22);          
+        
